@@ -41,17 +41,47 @@ void insertion_sort(int a[],int n){
         while(temp<a[j] && j>=0){
             a[j+1]=a[j];
             j--;
-            a[j+1]=temp;
         }
+         a[j+1]=temp;
     }
 }
 
-void selection_sort(){
-    
+void swap(int* a,int* b){
+    int temp=a*;
+    *a=*b;
+    *b=temp;
 }
 
-void quick_sort(){
-    
+void quick_sort(int a[],int low,int high){
+    /* a[] -->array to be sorted
+       i-->low 
+       j--> high
+       */
+       int i=low, j=high;
+       int pivot=[(low+high)/2]; // taking middle element as pivot element ; so their is no need to swap pivot elemetnt
+
+       //partition
+       while(i<=j){
+
+        while(a[i]<pivot){
+            i++;
+        }
+        while(a[j]>pivot){
+            j--;
+        }
+        swap(&a[i],&a[j]);
+        i++;
+        j--;
+       }
+       
+       // recursively sort the partitions
+       if(low<j){
+        quick_sort(a,low,j);
+       }
+       if(i<high){
+        quick_sort(a,i,high);
+       }
+
 }
 
 void merge_sort(){

@@ -84,7 +84,7 @@ void quick_sort(int a[], int low, int high) {
 
 void merge(int a[], int low, int mid, int high) {
   int i = low;
-  int j = mid + 1;
+  int j = mid + 1; 
   int k = low;
   int b[high -low+ 1]; // Create temporary array to store merged result
 
@@ -133,7 +133,9 @@ void merge_sort(int a[], int low, int high) {
   }
 }
 
-void radix_sort() {}
+void radix_sort() {
+    
+}
 int main() {
 
   int i, j, temp;

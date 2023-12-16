@@ -1,17 +1,31 @@
 #include <stdio.h>
 
-void bubble_sort(int *a) {
+void bubble_sort(int *a, int size) {
   int i, j, temp;
+  int flag;
+
   for (i = 0; i < size - 1; i++) {
+    flag = 0;  // Reset the flag for each pass
     for (j = 0; j < size - i - 1; j++) {
       if (a[j] > a[j + 1]) {
         temp = a[j];
         a[j] = a[j + 1];
         a[j + 1] = temp;
+        flag = 1;  // Set the flag if a swap is performed
       }
+    }
+
+    // If no swaps were made, the array is already sorted
+    if (flag == 0) {
+      break;
     }
   }
 }
+// flag is used to determine whether array is already sorted or not to increase the efficiency of code
+ /*flag=1 means swapping is done  flag=0 means swapping not done
+   in Loop(i) n-1 in first loop because in bubble sort n-1 iterations are there
+   in loop (j) is used to make comparisons; n-i-1 is used because last elemnt will be already sorted
+    */
 
 void selection_sort(int a[], int n) {
   int i, j, min, temp;
@@ -45,7 +59,7 @@ void insertion_sort(int a[], int n) {
 }
 
 void swap(int *a, int *b) {
-  int temp = a *;
+  int temp = *a;
   *a = *b;
   *b = temp;
 }

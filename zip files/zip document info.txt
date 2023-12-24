@@ -45,4 +45,5 @@ For example,
 	2.Program to implement selection sort
 	3.Program to implement insertion sort
 
-12.
+12.	1.Quick sort
+	2.Merge Sort
